@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>css3实现旋转立方体</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 400px;
+        height: 400px;
+        margin: 200px auto;
+        perspective: 1200px;
+        position: relative;
+        top: 50%;
+        transform: translateY(50%);
+      }
+      .box ul {
+        width: 300px;
+        height: 300px;
+        margin: 50px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: move 6s infinite linear;
+        transform-origin: center center 150px;
+      }
+      .box ul li {
+        width: 300px;
+        height: 300px;
+        list-style: none;
+        position: absolute;
+      }
+      .box ul li:nth-of-type(1) {
+        background: red;
+        opacity: 0.4;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        transform: translateX(300px) rotateY(-90deg);
+        transform-origin: left;
+        color: #fff;
+      }
+      .box ul li:nth-of-type(2) {
+        background: blueviolet;
+        opacity: 0.3;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        transform: translateY(-300px) rotateX(-90deg);
+        transform-origin: bottom;
+      }
+      .box ul li:nth-of-type(3) {
+        background: blue;
+        opacity: 0.4;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        color: #fff;
+      }
+      .box ul li:nth-of-type(4) {
+        background: brown url(./868142875427852589.jpg) center;
+        opacity: 0.6;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        transform: translateZ(300px);
+        background-size: cover;
+
+      }
+      .box ul li:nth-of-type(5) {
+        opacity: 0.8;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        transform: translateX(-300px) rotateY(90deg);
+        transform-origin: right;
+        background: orange url(./301183655547466242.jpg) center;
+        background-size: cover;
+      }
+      .box ul li:nth-of-type(6) {
+        background: green;
+        opacity: 0.3;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        transform: translateY(300px) rotateX(90deg);
+        transform-origin: top;
+      }
+      @keyframes move {
+        from {
+          transform: rotateX(0deg) rotateY(0deg);
+        }
+        to {
+          transform: rotateX(360deg) rotateY(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li>刘斌</li>
+        <li></li>
+        <li>哈喽哈喽</li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>
